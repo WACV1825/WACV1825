@@ -1,0 +1,15 @@
+# Ignore all .pyc files
+*.pyc
+
+# Ignore __pycache__ folders
+__pycache__/
+
+# Ignore the checkpoint folder
+checkpoints/
+
+# Ignore the data folder
+data/
+
+# Ignore the wandb folder
+wandb/
+
