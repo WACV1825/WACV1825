@@ -8,7 +8,9 @@ This repository has been anonymized to comply with the double-blind review proce
 To train the teacher model using FixMatch, run the following command:
 
 ```bash
-python SRST_AWR/train_teacher.py --dataset {dataset} --model {model} --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo fixmatch --lamb 1 --eta 0.95
+cd SRST_AWR
+python train_teacher.py --dataset {dataset} --model {model} --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo fixmatch --lamb 1 --eta 0.95
+cd ..
 ```
 
 This part of the code is based on the implementation provided by [SRST-AWR](https://github.com/dyoony/SRST_AWR).
@@ -36,7 +38,9 @@ python train_semi_interp.py --model-dir {directory_to_save_model} --dataset {dat
 To train robust models using SRST-AWR, use the following command:
 
 ```bash
-python SRST_AWR/main.py --dataset {dataset} --model wideresnet --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo srst-awr --perturb_loss {perturb_loss} --teacher fixmatch --tau {tau_value_defined_in_SRSTAWR} --smooth 0.2 --lamb {lambd} --gamma 4 --beta 0.5 --lr 0.05 --swa --wandb-project {wandb project name} --wandb-entity {wandb entity name} --wandb-run-name {wandb run name} --gpu {gpu_id}
+cd SRST_AWR
+python main.py --dataset {dataset} --model wideresnet --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo srst-awr --perturb_loss {perturb_loss} --teacher fixmatch --tau {tau_value_defined_in_SRSTAWR} --smooth 0.2 --lamb {lambd} --gamma 4 --beta 0.5 --lr 0.05 --swa --wandb-project {wandb project name} --wandb-entity {wandb entity name} --wandb-run-name {wandb run name} --gpu {gpu_id}
+cd ..
 ```
 
 This part is adapted from the implementation in the [SRST-AWR repository](https://github.com/dyoony/SRST_AWR). 
@@ -46,7 +50,9 @@ This part is adapted from the implementation in the [SRST-AWR repository](https:
 To train robust models using SRST-AWR+Ours, use the following command:
 
 ```bash
-python SRST_AWR/main_intp.py --dataset {dataset} --model wideresnet --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo srst-awr --perturb_loss {perturb_loss} --teacher fixmatch --tau {tau defined in SRSTAWR paper} --tau-margin {tau defined in our paper} --smooth 0.2 --lamb {lambd} --gamma 4 --beta {beta defined in SRSTAWR paper} --lr 0.05 --swa --lr-setup {lr modes: 0, 1, or 2} --rho-setup {rho modes: 0 or 1} --intp-steps {K} --ges {global epsilon scheduling strategy} {--mixed} --mixed-beta {beta defined in our paper} --inner-target {hard or soft} --wandb-project {wandb project name} --wandb-entity {wandb entity name} --wandb-run-name {wandb run name} --gpu {gpu_id}
+cd SRST_AWR
+python main_intp.py --dataset {dataset} --model wideresnet --depth {depth} --widen_factor {widen_factor} --num_labels {num_labels} --algo srst-awr --perturb_loss {perturb_loss} --teacher fixmatch --tau {tau defined in SRSTAWR paper} --tau-margin {tau defined in our paper} --smooth 0.2 --lamb {lambd} --gamma 4 --beta {beta defined in SRSTAWR paper} --lr 0.05 --swa --lr-setup {lr modes: 0, 1, or 2} --rho-setup {rho modes: 0 or 1} --intp-steps {K} --ges {global epsilon scheduling strategy} {--mixed} --mixed-beta {beta defined in our paper} --inner-target {hard or soft} --wandb-project {wandb project name} --wandb-entity {wandb entity name} --wandb-run-name {wandb run name} --gpu {gpu_id}
+cd ..
 ```
 
 This part is adapted from the implementation in the [SRST-AWR repository](https://github.com/dyoony/SRST_AWR).
