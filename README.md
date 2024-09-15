@@ -67,3 +67,6 @@ python test.py --dataset {dataset} --model wideresnet --depth {depth} --widen-fa
 ```
 
 
+### Double-Blind Review Notice
+
+This repository has been anonymized to comply with the double-blind review process for WACV 2025. The names in the `SRST_AWR/LICENSE` file belong to the authors of the original SRST-AWR code, which this repository builds upon, and are not associated with the authors of this submission.
