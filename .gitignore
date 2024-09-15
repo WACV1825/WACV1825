@@ -13,3 +13,5 @@ data/
 # Ignore the wandb folder
 wandb/
 
+**/.ipynb_checkpoints/
+
